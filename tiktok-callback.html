@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ToonMotion Authorization</title><link rel="stylesheet" href="style.css">
+</head>
+<body><main>
+<h1>Authorization received</h1>
+<p>Copy this code back into the ToonMotion tool. It is valid for a few minutes and only once.</p>
+<pre id="code">(no code in this link)</pre>
+<p class="muted" id="err"></p>
+<p><a href="index.html">Home</a></p>
+<script>
+const q = new URLSearchParams(location.search);
+if (q.get("code")) document.getElementById("code").textContent = q.get("code");
+if (q.get("error")) document.getElementById("err").textContent = q.get("error") + ": " + (q.get("error_description") || "");
+</script>
+</main></body>
+</html>
